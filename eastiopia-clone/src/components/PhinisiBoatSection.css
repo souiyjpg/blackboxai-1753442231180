@@ -1,0 +1,246 @@
+.phinisi-section {
+  padding: 100px 0;
+  background: var(--light-gray);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.boats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.boat-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.boat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.boat-image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.boat-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.boat-card:hover .boat-image img {
+  transform: scale(1.05);
+}
+
+.boat-badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: var(--primary-teal);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.boat-content {
+  padding: 30px;
+}
+
+.boat-category {
+  color: var(--primary-teal);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.boat-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+}
+
+.boat-features {
+  list-style: none;
+  margin-bottom: 25px;
+}
+
+.boat-features li {
+  padding: 8px 0;
+  color: var(--text-light);
+  position: relative;
+  padding-left: 20px;
+}
+
+.boat-features li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary-teal);
+  font-weight: bold;
+}
+
+.boat-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.boat-price {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-teal);
+}
+
+.price-unit {
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+.boat-footer .btn {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .phinisi-section {
+    padding: 80px 0;
+  }
+
+  .boats-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: none;
+  }
+
+  .boat-card {
+    margin: 0 15px;
+  }
+
+  .boat-image {
+    height: 200px;
+  }
+
+  .boat-content {
+    padding: 25px 20px;
+  }
+
+  .boat-name {
+    font-size: 1.3rem;
+  }
+
+  .boat-footer {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+
+  .boat-footer .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .phinisi-section {
+    padding: 60px 0;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .boats-grid {
+    gap: 20px;
+  }
+
+  .boat-card {
+    margin: 0 10px;
+  }
+
+  .boat-image {
+    height: 180px;
+  }
+
+  .boat-content {
+    padding: 20px 15px;
+  }
+
+  .boat-name {
+    font-size: 1.2rem;
+  }
+
+  .boat-features li {
+    padding: 6px 0;
+    font-size: 14px;
+  }
+
+  .price {
+    font-size: 1.1rem;
+  }
+}
+
+/* Animation */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.boat-card {
+  animation: slideInUp 0.6s ease-out;
+}
+
+.boat-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+/* Hover effects */
+.boat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, var(--primary-teal), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.boat-card:hover::before {
+  opacity: 0.05;
+}
