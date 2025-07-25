@@ -1,0 +1,388 @@
+.footer {
+  background: var(--dark-blue);
+  color: white;
+  position: relative;
+}
+
+.footer-content {
+  padding: 60px 0 40px;
+}
+
+.instagram-section {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.instagram-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.instagram-item {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.instagram-item:hover {
+  transform: scale(1.05);
+}
+
+.instagram-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.instagram-btn {
+  background: white;
+  color: var(--dark-blue);
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.instagram-btn:hover {
+  background: var(--primary-teal);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 128, 128, 0.3);
+}
+
+.footer-main {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 40px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+}
+
+.footer-column h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.logo-icon {
+  position: relative;
+  width: 50px;
+  height: 40px;
+}
+
+.logo-icon .boat-hull {
+  width: 40px;
+  height: 10px;
+  background: var(--primary-teal);
+  border-radius: 0 0 20px 20px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo-icon .boat-mast {
+  width: 2px;
+  height: 30px;
+  background: var(--primary-teal);
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+}
+
+.logo-icon .boat-sail-main {
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid var(--primary-teal);
+  border-bottom: 20px solid var(--primary-teal);
+  position: absolute;
+  right: 8px;
+  bottom: 15px;
+}
+
+.logo-icon .boat-sail-front {
+  width: 0;
+  height: 0;
+  border-left: 8px solid var(--primary-teal);
+  border-right: 8px solid transparent;
+  border-bottom: 12px solid var(--primary-teal);
+  position: absolute;
+  left: 8px;
+  bottom: 20px;
+}
+
+.logo-text h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: var(--primary-teal);
+}
+
+.logo-text p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.company-description {
+  line-height: 1.6;
+  opacity: 0.9;
+  font-size: 0.95rem;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links button {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-align: left;
+  padding: 0;
+}
+
+.footer-links button:hover {
+  color: var(--primary-teal);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: var(--primary-teal);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 128, 128, 0.3);
+}
+
+.scroll-to-top:hover {
+  background: #006666;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 128, 128, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-content {
+    padding: 40px 0 30px;
+  }
+
+  .instagram-section {
+    margin-bottom: 40px;
+  }
+
+  .instagram-gallery {
+    gap: 10px;
+  }
+
+  .instagram-item {
+    width: 80px;
+    height: 80px;
+  }
+
+  .instagram-btn {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    justify-content: center;
+  }
+
+  .footer-links button {
+    text-align: center;
+  }
+
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    padding: 30px 0 20px;
+  }
+
+  .instagram-section {
+    margin-bottom: 30px;
+  }
+
+  .instagram-gallery {
+    gap: 8px;
+  }
+
+  .instagram-item {
+    width: 70px;
+    height: 70px;
+  }
+
+  .instagram-btn {
+    padding: 8px 20px;
+    font-size: 13px;
+  }
+
+  .footer-grid {
+    gap: 25px;
+  }
+
+  .footer-column h4 {
+    font-size: 1.1rem;
+  }
+
+  .logo-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .company-description {
+    font-size: 0.9rem;
+  }
+
+  .footer-links button {
+    font-size: 0.9rem;
+  }
+
+  .scroll-to-top {
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer-column {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.footer-column:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.footer-column:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.instagram-section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Hover effects for Instagram items */
+.instagram-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 128, 128, 0.8);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.instagram-item:hover::after {
+  opacity: 1;
+}
+
+.instagram-item::before {
+  content: '📷';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.instagram-item:hover::before {
+  opacity: 1;
+}
+
+/* Scroll to top button animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+.scroll-to-top:hover {
+  animation: bounce 1s;
+}
