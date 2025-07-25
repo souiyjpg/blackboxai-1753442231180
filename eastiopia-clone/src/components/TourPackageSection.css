@@ -1,0 +1,272 @@
+.tour-package-section {
+  padding: 100px 0;
+  background: white;
+}
+
+.tours-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.tour-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.tour-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.tour-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.tour-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.tour-card:hover .tour-image img {
+  transform: scale(1.1);
+}
+
+.tour-duration {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: var(--primary-teal);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.tour-duration::before {
+  content: '📅';
+  font-size: 10px;
+}
+
+.tour-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tour-card:hover .tour-overlay {
+  opacity: 1;
+}
+
+.view-details-btn {
+  background: white;
+  color: var(--primary-teal);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-details-btn:hover {
+  background: var(--primary-teal);
+  color: white;
+  transform: scale(1.05);
+}
+
+.tour-content {
+  padding: 25px;
+}
+
+.tour-type {
+  color: var(--primary-teal);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.tour-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.tour-highlights {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.tour-highlights li {
+  padding: 5px 0;
+  color: var(--text-light);
+  font-size: 14px;
+  position: relative;
+  padding-left: 15px;
+}
+
+.tour-highlights li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--primary-teal);
+  font-weight: bold;
+}
+
+.tour-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.tour-price {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.tour-price .price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-teal);
+}
+
+.tour-price .price-unit {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.tour-footer .btn {
+  padding: 8px 16px;
+  font-size: 13px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .tour-package-section {
+    padding: 80px 0;
+  }
+
+  .tours-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+  }
+
+  .tour-image {
+    height: 200px;
+  }
+
+  .tour-content {
+    padding: 20px;
+  }
+
+  .tour-name {
+    font-size: 1.1rem;
+  }
+
+  .tour-footer {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .tour-footer .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .tour-package-section {
+    padding: 60px 0;
+  }
+
+  .tours-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .tour-image {
+    height: 180px;
+  }
+
+  .tour-content {
+    padding: 18px;
+  }
+
+  .tour-name {
+    font-size: 1rem;
+  }
+
+  .tour-highlights li {
+    font-size: 13px;
+  }
+
+  .tour-price .price {
+    font-size: 1rem;
+  }
+}
+
+/* Animation */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.tour-card {
+  animation: fadeInScale 0.5s ease-out;
+}
+
+.tour-card:nth-child(2) { animation-delay: 0.1s; }
+.tour-card:nth-child(3) { animation-delay: 0.2s; }
+.tour-card:nth-child(4) { animation-delay: 0.3s; }
+.tour-card:nth-child(5) { animation-delay: 0.4s; }
+.tour-card:nth-child(6) { animation-delay: 0.5s; }
+
+/* Special styling for different tour types */
+.tour-card[data-type="Private Trip"] .tour-type {
+  background: linear-gradient(45deg, var(--primary-teal), #00a0a0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tour-card[data-type="Private Trip"]::after {
+  content: '👑';
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  opacity: 0.7;
+}
