@@ -1,0 +1,261 @@
+.branding-section {
+  padding: 100px 0;
+  background: white;
+  overflow: hidden;
+}
+
+.branding-circle {
+  width: 500px;
+  height: 500px;
+  background: var(--primary-teal);
+  border-radius: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 128, 128, 0.3);
+}
+
+.sailing-boat {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.boat-hull {
+  width: 80px;
+  height: 20px;
+  background: white;
+  border-radius: 0 0 40px 40px;
+  position: relative;
+  z-index: 3;
+}
+
+.boat-mast {
+  width: 3px;
+  height: 60px;
+  background: white;
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.boat-sail-main {
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid white;
+  border-bottom: 40px solid white;
+  position: absolute;
+  right: -15px;
+  bottom: 25px;
+  z-index: 1;
+}
+
+.boat-sail-front {
+  width: 0;
+  height: 0;
+  border-left: 15px solid white;
+  border-right: 15px solid transparent;
+  border-bottom: 25px solid white;
+  position: absolute;
+  left: -10px;
+  bottom: 35px;
+  z-index: 1;
+}
+
+.boat-waves {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+}
+
+.wave {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
+  margin: 3px 0;
+  animation: wave-animation 2s ease-in-out infinite;
+}
+
+.wave-1 {
+  width: 100%;
+  animation-delay: 0s;
+}
+
+.wave-2 {
+  width: 80%;
+  margin-left: 10%;
+  animation-delay: 0.3s;
+}
+
+.wave-3 {
+  width: 60%;
+  margin-left: 20%;
+  animation-delay: 0.6s;
+}
+
+@keyframes wave-animation {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scaleX(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1.1);
+  }
+}
+
+.branding-text {
+  text-align: center;
+  color: white;
+}
+
+.brand-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.brand-tagline {
+  font-size: 1.1rem;
+  font-weight: 300;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .branding-section {
+    padding: 80px 0;
+  }
+
+  .branding-circle {
+    width: 400px;
+    height: 400px;
+  }
+
+  .brand-name {
+    font-size: 2rem;
+  }
+
+  .brand-tagline {
+    font-size: 1rem;
+  }
+
+  .boat-hull {
+    width: 60px;
+    height: 15px;
+  }
+
+  .boat-mast {
+    height: 45px;
+    bottom: 15px;
+  }
+
+  .boat-sail-main {
+    border-left-width: 20px;
+    border-right-width: 20px;
+    border-bottom-width: 30px;
+    right: -10px;
+    bottom: 20px;
+  }
+
+  .boat-sail-front {
+    border-left-width: 12px;
+    border-right-width: 12px;
+    border-bottom-width: 20px;
+    left: -8px;
+    bottom: 25px;
+  }
+
+  .boat-waves {
+    width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .branding-section {
+    padding: 60px 0;
+  }
+
+  .branding-circle {
+    width: 320px;
+    height: 320px;
+  }
+
+  .brand-name {
+    font-size: 1.8rem;
+  }
+
+  .brand-tagline {
+    font-size: 0.9rem;
+    padding: 0 20px;
+  }
+
+  .boat-hull {
+    width: 50px;
+    height: 12px;
+  }
+
+  .boat-mast {
+    height: 35px;
+    bottom: 12px;
+  }
+
+  .boat-sail-main {
+    border-left-width: 15px;
+    border-right-width: 15px;
+    border-bottom-width: 25px;
+    right: -8px;
+    bottom: 15px;
+  }
+
+  .boat-sail-front {
+    border-left-width: 10px;
+    border-right-width: 10px;
+    border-bottom-width: 15px;
+    left: -6px;
+    bottom: 20px;
+  }
+
+  .boat-waves {
+    width: 80px;
+  }
+}
+
+/* Animation for the entire boat */
+@keyframes boat-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.sailing-boat {
+  animation: boat-float 3s ease-in-out infinite;
+}
+
+/* Entrance animation */
+@keyframes circle-scale {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.branding-circle {
+  animation: circle-scale 0.8s ease-out;
+}
